@@ -1,0 +1,67 @@
+import Image from "next/image";
+import Link from "next/link";
+
+const HERO_SVG = (
+  <svg
+    className="h-full w-[120%]"
+    width="1401"
+    height="760"
+    viewBox="0 0 1401 760"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    preserveAspectRatio="xMidYMid slice"
+  >
+    <path className="hero-path" d="M1127.83 -899.985L1078.63 -1016.77L540.815 553.942L-681.57 31.322L-637.264 135.165L539.676 568.559L1127.83 -899.964V-899.985Z" fill="#05163D" />
+    <path className="hero-path" d="M538.536 584.339L-592.514 239.917L-547.956 344.31L537.029 604.033L1224.65 -670.364L1176.75 -784.043L538.536 584.339Z" fill="#05163D" />
+    <path className="hero-path" d="M-503.438 448.637L-456.543 558.509L534.036 642.615L1314.82 -456.291L1273.76 -553.746L535.774 619.812C302.866 581.249 -503.438 448.637 -503.438 448.637Z" fill="#05163D" />
+    <path className="hero-path" d="M1371.67 -321.311L532.323 664.678L-416.673 652.579L-370.841 760.144L530.507 688.053L1419.94 -206.764L1371.67 -321.311Z" fill="#05163D" />
+    <path className="hero-path" d="M1468.35 -91.8551L528.823 710.161L-326.809 862.594L-282.464 966.5L526.331 742.335L1519.03 28.4238L1468.33 -91.8975L1468.35 -91.8551Z" fill="#05163D" />
+    <path className="hero-path" d="M-237.269 1069.94C-225.873 1097.33 -193.464 1171.84 -193.464 1171.84L521.058 811.211L1615.2 256.67L1566.43 141.087L524.033 772.542L-237.211 1069.92L-237.269 1069.96V1069.94Z" fill="#05163D" />
+    <path className="hero-path" d="M1712.48 487.52C1701.49 461.121 1664.62 372.487 1664.62 372.487L518.122 849.416L-149.661 1278.47L-105.49 1380.94L514.471 897.222L1712.58 487.541L1712.5 487.478L1712.48 487.52Z" fill="#05163D" />
+  </svg>
+);
+
+export function Hero() {
+  return (
+    <section className="landing-hero mt-2 h-mobile-hero w-full p-5 pt-0 lg:h-[calc(100vh-84px)]">
+      <div className="relative flex h-full w-full flex-col justify-center overflow-hidden rounded-[30px] bg-[linear-gradient(180deg,#016be5_0%,#05163d_100%)]">
+        <div className="absolute left-0 top-0 h-full w-full">
+          <Image
+            src="/homepage/hero/xerox_scan.webp"
+            alt="decor"
+            fill
+            className="h-full w-full object-cover opacity-100"
+            sizes="100vw"
+          />
+        </div>
+        <div className="pointer-events-none absolute left-0 top-0 h-full w-full">
+          {HERO_SVG}
+        </div>
+        <div className="relative flex flex-col gap-6 px-4 md:px-20">
+          <h1 className="relative text-6xl uppercase leading-none text-white font-screamer selection:bg-black selection:text-white md:text-8xl lg:text-9xl lg:!leading-[0.9]">
+            Powering the programmable economy
+          </h1>
+          <p className="relative max-w-[620px] text-left leading-snug text-white md:text-lg lg:text-xl">
+            Arbitrum is the finance-native blockchain platform providing
+            infrastructure for applications, tokenization, and dedicated
+            blockchain environments.
+          </p>
+          <div className="relative flex w-full flex-col items-center gap-5 lg:w-auto lg:flex-row">
+            <Link
+              href="/solutions/finance"
+              className="flex h-10 w-full items-center justify-center rounded-3xl bg-black text-sm text-white transition-all hover:text-primary-blue-3 hover:shadow-button-glow lg:w-[200px] lg:text-base xl:w-[250px]"
+            >
+              Bring finance onchain
+            </Link>
+            <Link
+              href="/contact"
+              className="flex h-10 w-full items-center justify-center rounded-3xl bg-black text-sm text-white transition-all hover:text-primary-blue-3 hover:shadow-button-glow lg:w-[200px] lg:text-base xl:w-[250px]"
+            >
+              Become a partner
+            </Link>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
